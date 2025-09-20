@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Registro - Plataforma Anti-Extorsión</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="auth-container">
+    <h2>📝 Registro</h2>
+    <form id="registerForm">
+      <label for="regUser">Usuario</label>
+      <input type="text" id="regUser" autocomplete="username" required>
+
+      <label for="regPass">Contraseña</label>
+      <input type="password" id="regPass" autocomplete="new-password" required>
+
+      <button type="submit">Registrarse</button>
+    </form>
+    <p>¿Ya tienes cuenta? <a href="login.html">Inicia sesión aquí</a></p>
+    <div id="registerMessage" aria-live="polite"></div>
+  </div>
+
+  <script src="js/auth.js"></script>
+</body>
+</html>

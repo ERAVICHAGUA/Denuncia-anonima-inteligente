@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Plataforma Anti-Extorsión - Denuncia Anónima</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="logo">🛡️ Plataforma Anti-Extorsión</h1>
+      <nav class="nav">
+        <a href="#inicio">Inicio</a>
+        <a href="#denuncia">Denunciar</a>
+        <a href="#recursos">Recursos</a>
+        <button onclick="logout()" class="logout-btn">Cerrar sesión</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="inicio" class="hero">
+      <h2>Denuncia anónima y prevención</h2>
+      <p>Esta plataforma permite registrar denuncias de extorsión de forma anónima (prototipo). <strong>No incluya datos personales en la descripción.</strong></p>
+    </section>
+
+    <section id="denuncia" class="card">
+      <h3>Realizar denuncia anónima</h3>
+      <form id="formDenuncia" novalidate>
+        <label for="tipo">Tipo de extorsión <span class="required">*</span></label>
+        <select id="tipo" required>
+          <option value="">-- Seleccione --</option>
+          <option value="llamada">Llamada</option>
+          <option value="mensaje">Mensaje (SMS/WhatsApp)</option>
+          <option value="presencial">Presencial</option>
+          <option value="otro">Otro</option>
+        </select>
+
+        <label for="descripcion">Descripción (no incluir datos personales) <span class="required">*</span></label>
+        <textarea id="descripcion" rows="6" placeholder="Describe lo sucedido" required></textarea>
+
+        <label for="evidencia">Evidencia (opcional, máx 2MB)</label>
+        <input id="evidencia" type="file" accept="image/*,audio/*,video/*,text/*" />
+
+        <div class="actions">
+          <button id="btnEnviar" type="submit">Enviar denuncia (anónima)</button>
+          <button id="btnExport" type="button">Exportar denuncias (JSON)</button>
+        </div>
+      </form>
+      <div id="mensaje"></div>
+    </section>
+
+    <section id="recursos" class="card">
+      <h3>Recursos y contactos</h3>
+      <ul>
+        <li>📞 Policía Nacional: 105</li>
+        <li>📞 Denuncias anónimas: 1818</li>
+        <li>⚠️ Consejo: no incluya datos personales en la denuncia.</li>
+      </ul>
+    </section>
+
+    <section id="ultimas" class="card">
+      <h3>Últimas denuncias (simulado)</h3>
+      <div id="listaDenuncias"></div>
+      <div class="small">
+        <button id="btnClear" type="button">Borrar almacenamiento (solo prueba)</button>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> Plataforma Anti-Extorsión — Prototipo académico</small>
+    </div>
+  </footer>
+
+  <script src="js/app.js"></script>
+  <script src="js/auth.js"></script>
+</body>
+</html>
